@@ -1,19 +1,33 @@
 <template>
-  <div class="courses pt-5 pb-2 text-center">
-    <h2 class="mb-4">New Courses</h2>
+  <div :class="{'bg-color': type === 'New Courses'}"
+  class="courses pt-5 pb-2 text-center">
+    <h2 class="mb-4">{{type}}</h2>
     <div class="container debug">
-     <CourseCard />
+      <!-- card new course -->
+     <CourseCard v-show="type === 'New Courses'"/>
+     <InfoCourseCard v-show="type === 'Why my Courses?'"/>
 
     </div>
-    <button type="button" class="btn btn-primary rounded-pill my-5">Load More</button>
+    <button v-show="type === 'New Courses'" type="button" class="btn btn-primary rounded-pill my-5">Load More</button>
   </div>
 </template>
 
 <script>
 import CourseCard from './CourseCard.vue';
+import InfoCourseCard from './InfoCourseCard.vue';
 export default {
     name: "CoursesComp",
-    components: { CourseCard }
+    components: { CourseCard, InfoCourseCard },
+    props: {
+      type: String
+    },
+
+    data(){
+      return{
+      }
+    }
+
+
 }
 </script>
 
@@ -24,15 +38,18 @@ export default {
 
   .courses{
     background-color: #edf2f5;
-   
+      background-color: white;
     .btn{
       background-color: #f2b91e;
       border-color: #f2b91e;
       text-transform: uppercase;
       font-weight: bold;
       padding: 10px 20px;
-    }
-   
+    } 
+  }
+
+  .bg-color{
+    background-color: #edf2f5;
   }
 
 </style>

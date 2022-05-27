@@ -15,8 +15,12 @@
     </div>
 
     <AboutComp />
-    <CoursesComp />
+    <!-- new course -->
+    <CoursesComp :type="'New Courses'"/>
     <ContainerFullW />
+    <!-- about Course -->
+    <CoursesComp :type="'Why my Courses?'"/>
+
   </div>
 </template>
 
