@@ -17,9 +17,13 @@
     <AboutComp />
     <!-- new course -->
     <CoursesComp :type="'New Courses'"/>
-    <ContainerFullW />
+    <!-- cta book -->
+    <ContainerFullW :type="'Cta'" />
     <!-- about Course -->
     <CoursesComp :type="'Why my Courses?'"/>
+    <!-- performance -->
+    <ContainerFullW :type="'performance'"/>
+
 
   </div>
 </template>

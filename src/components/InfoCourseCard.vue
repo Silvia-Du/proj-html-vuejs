@@ -3,7 +3,7 @@
     <div class="container debug">
       <div class="row">
         <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5">
+        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
           <div class="debug px-4">
             <i class="fa-solid fa-briefcase"></i>
           </div>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5">
+        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
           <div class="debug px-4">
             <i class="fa-solid fa-rocket"></i>
           </div>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5">
+        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
           <div class="debug px-4">
             <i class="fa-regular fa-thumbs-up"></i>
           </div>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5">
+        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
           <div class="debug px-4">
             <i class="fa-solid fa-gear"></i>
           </div>
