@@ -15,14 +15,16 @@
     </div>
 
     <AboutComp />
+    <CoursesComp />
   </div>
 </template>
 
 <script>
 import AboutComp from './AboutComp.vue';
+import CoursesComp from './CoursesComp.vue';
 export default {
     name: "MainComp",
-    components: { AboutComp }
+    components: { AboutComp, CoursesComp }
 }
 </script>
 
