@@ -81,4 +81,21 @@ export default {
   }
 }
 
+ul{
+  list-style: none;
+  height: 100%;
+  display: flex;
+  padding: 0;
+  li{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 100%;
+    margin-bottom: 0;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
 </style>
