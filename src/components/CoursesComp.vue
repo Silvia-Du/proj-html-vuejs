@@ -1,12 +1,12 @@
 <template>
   <div :class="{'bg-color': type === 'New Courses'}"
   class="courses pt-5 pb-2 text-center mb-5">
-    <h2 class="mb-4">{{type}}</h2>
+    <h2 class="my-4">{{type}}</h2>
     <div class="container debug">
       <!-- card new course -->
      <CourseCard v-show="type === 'New Courses'"/>
      <InfoCourseCard v-show="type === 'Why my Courses?'"/>
-
+      <ReviewsComp v-show="type === 'What Students Say'"/>
     </div>
     <button v-show="type === 'New Courses'" type="button" class="btn btn-primary rounded-pill my-5">Load More</button>
   </div>
@@ -15,9 +15,10 @@
 <script>
 import CourseCard from './CourseCard.vue';
 import InfoCourseCard from './InfoCourseCard.vue';
+import ReviewsComp from './ReviewsComp.vue';
 export default {
     name: "CoursesComp",
-    components: { CourseCard, InfoCourseCard },
+    components: { CourseCard, InfoCourseCard, ReviewsComp },
     props: {
       type: String
     },

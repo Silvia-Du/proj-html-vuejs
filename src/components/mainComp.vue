@@ -23,6 +23,8 @@
     <CoursesComp :type="'Why my Courses?'"/>
     <!-- performance -->
     <ContainerFullW :type="'performance'"/>
+    <!-- Reviews -->
+    <CoursesComp :type="'What Students Say'"/>
 
 
   </div>
