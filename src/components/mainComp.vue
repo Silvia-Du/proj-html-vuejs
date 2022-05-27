@@ -16,15 +16,17 @@
 
     <AboutComp />
     <CoursesComp />
+    <ContainerFullW />
   </div>
 </template>
 
 <script>
 import AboutComp from './AboutComp.vue';
 import CoursesComp from './CoursesComp.vue';
+import ContainerFullW from './ContainerFullW.vue';
 export default {
     name: "MainComp",
-    components: { AboutComp, CoursesComp }
+    components: { AboutComp, CoursesComp, ContainerFullW }
 }
 </script>
 
