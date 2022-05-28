@@ -1,17 +1,19 @@
 <template>
   <div>
     <!-- JUMBOTRON -->
-    <div class="jumbotron debug d-flex align-items-center">
+    <div class="jumbotron d-flex align-items-center">
+
       <div class="container">
         <div class="row d-flex justify-content-end">
-
-          <div class="col-12 col-md-6 text-box debug">
-            <h1>Start Your human revoultion today</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus voluptate ut ratione. Esse, alias error?</p>
+          <div class="col-12 col-md-5 text-box">
+            <h1 class="mb-4">Start Your Human <span style="color: #f2b91e">Revoultion</span>  today</h1>
+            <p>A wonderful revolution has taken possession of my entire soul, like these sweet mornings of spring which i enjoy my whole heart.</p>
           </div>
         </div>
-
       </div>
+
+      <CountDown />
+
     </div>
 
     <AboutComp />
@@ -34,9 +36,10 @@
 import AboutComp from './AboutComp.vue';
 import CoursesComp from './CoursesComp.vue';
 import ContainerFullW from './ContainerFullW.vue';
+import CountDown from './CountDown.vue';
 export default {
     name: "MainComp",
-    components: { AboutComp, CoursesComp, ContainerFullW }
+    components: { AboutComp, CoursesComp, ContainerFullW, CountDown }
 }
 </script>
 
@@ -47,6 +50,15 @@ export default {
   background-image: url(../assets/img/slide-1.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
+  h1{
+    font-size: 3.75rem;
+  }
+ 
+  .col-12{
+    margin-right: 180px;
+    margin-bottom: 200px;
+  }
 }
 
 </style>
