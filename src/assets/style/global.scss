@@ -1,9 +1,21 @@
 @import '~bootstrap/scss/bootstrap.scss';
-@import '~@fontsource/lato/index.css';
+@import '~@fontsource/barlow/index.css';
+@import '~@fontsource/barlow/500.css';
+@import '~@fontsource/roboto-slab/index.css';
+@import '~@fontsource/roboto-slab/700.css';
 
 
 .debug{
   border: 1px solid black;
   background-color: rgba(187, 87, 87, 0.623);
+}
+
+body{ 
+  font-family: "Barlow", sans-serif; 
+}
+
+h1, h2{
+ font-family: "Roboto Slab", serif;
+ font-weight: 700;
 }
 
