@@ -7,32 +7,33 @@
           <img src="../assets/img/MasterStudy-1.svg" alt="logo-svg">
 
           </div>
-        <div class="col-8 d-none d-lg-block debug d-flex">
+        <div class="col-8 d-none d-xl-block debug d-flex">
           <div class="right d-flex align-items-center justify-content-end">
 
+            <!-- Nav -->
             <nav class="sd-nav debug ">
-              <ul>
-                <li><a href="#">NavItem</a></li>
-                <li><a href="#">NavItem</a></li>
-                <li><a href="#">NavItem</a></li>
-                <li><a href="#">NavItem</a></li>
-                <li><a href="#">NavItem</a></li>
+              <ul class="mb-0">
+                <li v-for="(item, index) in navItems" :key="`nav-${index}`">
+                  <a :href="item.link">{{item.name}}</a>
+                  <div :class="{'active': index === indexActive}"
+                  class="line-active mt-2 position-relative">
+                    <i class="fa-solid fa-caret-up position-absolute"></i>
+                  </div>
+                </li>
               </ul>
-              <!-- qui va il tag in absolute -->
+              <span class="badge text-uppercase">New</span>
             </nav>
     
             <!-- SOCIAL -->
             <div class="social debug ms-5">
-              <i class="fa-brands fa-linkedin"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
+              <a v-for="(icon, index) in socialItems" :key="`icons-${index}`"
+              :href="icon.link"><i :class="`fa-brands ${icon.ref}`"></i></a>
             </div>
           </div>
          
 
         </div>
-        <div class="_toggler col-8 d-lg-none d-flex justify-content-end debug">
+        <div class="_toggler col-8 d-xl-none d-flex justify-content-end debug">
           H
         </div>
 
@@ -40,7 +41,6 @@
 
       </div>
 
-      <!-- NAV -->
       
     </div>
   </div>
@@ -48,8 +48,20 @@
 
 <script>
 export default {
-  name: 'HeaderComp'
+  name: 'HeaderComp',
+
+  props:{
+    socialItems: Array,
+    navItems: Array
+  },
+
+  data(){
+    return{
+      indexActive: 4,
+    }
+  }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -63,21 +75,38 @@ export default {
   .row{
     width: 100%;
 
-    img{
-      height: 35px;
-    }
     .right{
       width: 100%;
       height: 100%;
-      a{
-        color: $titleColor;
+
+      .sd-nav{
+        position: relative;
+        flex-shrink: 0;
+        .badge{
+          display: inline-block;
+          color: white;
+          background-color: #dc1245;
+          font-size: 0.5rem;
+          padding: 4px 5px;
+          border-radius: 4px 4px 4px 0;
+          position: absolute;
+          top: -10px;
+          left: 66%;
+        } 
       }
-      i{
-        margin: 10px;
+      .social{
+        i{
+          margin: 10px;
+          font-size: 1.1rem;
+          color: $titleColor;
+  
+        }
       }
     }
-    
- 
+
+    img{
+      height: 35px;
+    }
   }
 }
 
@@ -86,16 +115,43 @@ ul{
   height: 100%;
   display: flex;
   padding: 0;
+
   li{
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin-left: 30px;
     height: 100%;
-    margin-bottom: 0;
+
+    .line-active{
+      height: 3px;
+      width: 80%;
+      background-color: #f3c035;
+      display: none;
+
+      &.active{
+        display: block;
+      }
+
+      .fa-caret-up{
+        color: #f3c035;
+        font-size: 0.8rem;
+        top: -5px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      
+    }
+
     a{
+      color: $titleColor;
+      font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
     }
+    
   }
 }
+
+
 
 </style>
