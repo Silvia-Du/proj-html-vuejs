@@ -1,7 +1,7 @@
 <template>
   <div :class="{'bg-color': type === 'New Courses'}"
   class="courses pt-5 pb-2 text-center mb-5">
-    <h2 class="my-4">{{type}}</h2>
+    <h2 class="mt-4 mb-5 bigger">{{type}}</h2>
     <div class="container debug">
       <!-- card new course -->
      <CourseCard v-show="type === 'New Courses'"/>

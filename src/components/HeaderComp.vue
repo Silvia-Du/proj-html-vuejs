@@ -23,6 +23,7 @@
 
                 </li>
               </ul>
+              <!-- badge -->
               <span class="badge text-uppercase">New</span>
             </nav>
     
