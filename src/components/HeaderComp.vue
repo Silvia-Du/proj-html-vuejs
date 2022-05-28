@@ -33,8 +33,8 @@
          
 
         </div>
-        <div class="_toggler col-8 d-xl-none d-flex justify-content-end debug">
-          H
+        <div class="_toggler col-8 d-xl-none d-flex justify-content-end align-items-center debug">
+          <i class="fa-solid fa-bars"></i>
         </div>
 
 
@@ -95,6 +95,7 @@ export default {
         } 
       }
       .social{
+        flex-shrink: 0;
         i{
           margin: 10px;
           font-size: 1.1rem;
@@ -106,6 +107,11 @@ export default {
 
     img{
       height: 35px;
+    }
+    ._toggler i{
+      border: 1px solid $titleColor;
+      padding: 4px 7px;
+      border-radius: 5px;
     }
   }
 }
