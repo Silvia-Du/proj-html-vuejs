@@ -2,29 +2,31 @@
   
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         
-    <div class="col position-relative">
+    <div v-for="(card, index) in cardsList" :key="`card-${index}`"
+    class="col position-relative">
 
-      <img src="../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg" alt="music-img">
-      <span class="badge text-uppercase position-absolute">special</span>
+      <img :src="`../assets/img/${card.image}`" :alt="card.subtitle">
+      <span v-if="card.spacial"
+      class="badge text-uppercase position-absolute">special</span>
 
       <!-- text-box -->
       <div class="text-box pt-1 px-3">
-        <p class="title pt-4 mb-2">How to be a DJ Make Electronic Music</p>
-        <p class="subtitle mt-3">Subtitle</p>
+        <p class="title pt-4 mb-2">{{card.name}}</p>
+        <p class="subtitle mt-3">{{card.subtitle}}</p>
 
         <div class="data d-flex justify-content-between py-3 mt-4">
 
           <div class="left box">
             <i class="fa-solid fa-signal"></i>
-            <span>Advanced</span>
+            <span>{{card.level}}</span>
           </div>
           <div class="center box">
             <i class="fa-solid fa-list-ul"></i>
-            <span>N' of Lecture</span>
+            <span>{{card.lectures}}</span>
           </div>
           <div class="right box">
             <i class="fa-regular fa-clock me-1"></i>
-            <span>H' of course</span>
+            <span>{{card.courseHours}}</span>
           </div>
         </div>
       </div>
@@ -37,7 +39,10 @@
 
 <script>
 export default {
-  name: 'CourseCard'
+  name: 'CourseCard',
+  props: {
+    cardsList: Array 
+  }
 }
 </script>
 

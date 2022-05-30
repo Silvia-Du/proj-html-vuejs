@@ -4,7 +4,7 @@
     <h2 class="mt-4 mb-5 bigger">{{type}}</h2>
     <div class="container debug">
       <!-- card new course -->
-     <CourseCard v-show="type === 'New Courses'"/>
+     <CourseCard v-show="type === 'New Courses'" :cardsList="newCourses"/>
      <InfoCourseCard v-show="type === 'Why my Courses?'"/>
       <ReviewsComp v-show="type === 'What Students Say'"/>
     </div>
@@ -16,6 +16,9 @@
 import CourseCard from './CourseCard.vue';
 import InfoCourseCard from './InfoCourseCard.vue';
 import ReviewsComp from './ReviewsComp.vue';
+
+import { newCourses } from '../assets/data/dataMainComp';
+
 export default {
     name: "CoursesComp",
     components: { CourseCard, InfoCourseCard, ReviewsComp },
@@ -25,6 +28,7 @@ export default {
 
     data(){
       return{
+        newCourses
       }
     }
 

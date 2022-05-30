@@ -59,7 +59,7 @@ export default {
     background-color: $darkYellow;
     //subscribe
     .subscribe, .count-down{
-      width: 50%;
+      // width: 50%;
       span{
         font-size: 2.25rem;
         font-family: "Roboto Slab", serif;
