@@ -1,45 +1,34 @@
 <template>
-  <div class="data debug row">
+  <div class="data row">
+
     <!-- Item -->
-    <div class="col-6 col-md-3 d-flex align-items-end debug mb-2">
-      <i class="fa-solid fa-user-group mb-2 me-3"></i>
+    <div v-for="(item, index) in performanceData" :key="`item-${index}`"
+    class="col-6 col-md-3 d-flex align-items-end mb-2">
+      <i :class="`fa-solid ${item.icon} mb-2 me-3`"></i>
       <div class="text-box">
-        <p>1234</p>
-        <p>descrizione</p>
+        <p>{{item.value}}</p>
+        <p>{{item.name}}</p>
       </div>
     </div>
     <!-- Item -->
-    <div class="col-6 col-md-3 d-flex align-items-end debug mb-2">
-      <i class="fa-solid fa-film mb-2 me-3"></i>
-      <div class="text-box">
-        <p>1234</p>
-        <p>descrizione</p>
-      </div>
-    </div>
-    <!-- Item -->
-    <div class="col-6 col-md-3 d-flex align-items-end debug mb-2">
-      <i class="fa-regular fa-image mb-2 me-3"></i>
-      <div class="text-box">
-        <p>1234</p>
-        <p>descrizione</p>
-      </div>
-    </div>
-    <!-- Item -->
-    <div class="col-6 col-md-3 d-flex align-items-end debug mb-2">
-      <i class="fa-regular fa-thumbs-up mb-2 me-3"></i>
-      <div class="text-box">
-        <p>1234</p>
-        <p>descrizione</p>
-      </div>
-    </div>
+    
+  
    
     
   </div>
 </template>
 
 <script>
+import {performanceData} from '../assets/data/dataMainComp';
+
 export default {
-  name: 'PerformanceComp'
+  name: 'PerformanceComp',
+
+  data(){
+    return{
+      performanceData
+    }
+  }
 }
 </script>
 
@@ -47,17 +36,21 @@ export default {
 
 .data{
   color: #fcfcfc;
+  line-height: 1.6rem;
+  font-family: "Roboto Slab", serif;
 
   & p:first-child{
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #eab830;
   }
 
   i{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   p{
+    // font-size: 0.9rem;
     margin-bottom: 0;
   }
 }

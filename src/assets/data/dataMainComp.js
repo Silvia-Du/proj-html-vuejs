@@ -55,7 +55,7 @@ const newCourses = [
   }
 ]
 
-const whyCourses =[
+const whyCourses= [
   {
     title: 'Enterpreneurship',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.',
@@ -78,4 +78,27 @@ const whyCourses =[
   },
 ]
 
-export { newCourses, whyCourses }
+const performanceData= [
+  {
+    value: 3195,
+    name: 'Online Learner',
+    icon: 'fa-user-group'
+  },
+  {
+    value: 23,
+    name: 'Video Courses',
+    icon: 'fa-film'
+  },
+  {
+    value: 437,
+    name: 'Sliders & Images',
+    icon: 'fa-image'
+  },
+  {
+    value: 1440,
+    name: 'Excellent Reviews',
+    icon: 'fa-thumbs-up'
+  },
+]
+
+export { newCourses, whyCourses, performanceData }
