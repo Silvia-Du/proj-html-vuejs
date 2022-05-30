@@ -11,8 +11,11 @@
 <script>
 import CallToActOffer from './CallToActOffer.vue';
 import PerformanceComp from './PerformanceComp.vue';
+
+
 export default {
     name: "ContainerFullW",
+    
     components: { CallToActOffer, PerformanceComp },
     props: {
       type: String

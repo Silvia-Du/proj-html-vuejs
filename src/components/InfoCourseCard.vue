@@ -1,45 +1,16 @@
 <template>
   <div class="info-course">
-    <div class="container debug">
+    <div class="container">
       <div class="row">
         <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
-          <div class="debug px-4">
-            <i class="fa-solid fa-briefcase"></i>
+        <div v-for="(why, index) in whyCourses" :key="`why-${index}`"
+        class="card col-12 col-md-6 d-flex flex-row py-5 mb-2">
+          <div class="px-4">
+            <i :class="`fa-solid ${why.icon}`"></i>
           </div>
           <div class="text-box">
-            <p class="title">Titolo</p>
-            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ab mollitia necessitatibus nostrum. Exercitationem, vero nostrum in sunt libero hic et veritatis non? Dicta omnis natus placeat est ipsum perspiciatis</p>
-          </div>
-        </div>
-        <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
-          <div class="debug px-4">
-            <i class="fa-solid fa-rocket"></i>
-          </div>
-          <div class="text-box">
-            <p class="title">Titolo</p>
-            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ab mollitia necessitatibus nostrum. Exercitationem, vero nostrum in sunt libero hic et veritatis non? Dicta omnis natus placeat est ipsum perspiciatis</p>
-          </div>
-        </div>
-        <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
-          <div class="debug px-4">
-            <i class="fa-regular fa-thumbs-up"></i>
-          </div>
-          <div class="text-box">
-            <p class="title">Titolo</p>
-            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ab mollitia necessitatibus nostrum. Exercitationem, vero nostrum in sunt libero hic et veritatis non? Dicta omnis natus placeat est ipsum perspiciatis</p>
-          </div>
-        </div>
-        <!-- Card -->
-        <div class="card col-12 col-md-6 debug d-flex flex-row py-5 mb-2">
-          <div class="debug px-4">
-            <i class="fa-solid fa-gear"></i>
-          </div>
-          <div class="text-box">
-            <p class="title">Titolo</p>
-            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ab mollitia necessitatibus nostrum. Exercitationem, vero nostrum in sunt libero hic et veritatis non? Dicta omnis natus placeat est ipsum perspiciatis</p>
+            <p class="title">{{why.title}}</p>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.</p>
           </div>
         </div>
         
@@ -49,8 +20,17 @@
 </template>
 
 <script>
+
+import {whyCourses} from '../assets/data/dataMainComp';
+
 export default {
-  name: 'InfoCourseComp'
+  name: 'InfoCourseComp',
+
+  data(){
+    return{
+      whyCourses
+    }
+  }
 }
 </script>
 
@@ -60,11 +40,25 @@ export default {
 
 .card{
   border-left: 5px solid $darkYellow;
+  &:hover{
+    background-color: $darkYellow;
+    box-shadow: inset 0 0 0 15px white;
+    border: 0;
+  }
+  &:hover .text-box .description{
+    color: $textDarkColor;  
+  }
+  &:hover i{
+    color: white;  
+  }
+
+
   .text-box{
     & p:first-child{
-      font-weight: bold;
+      font-weight: 800;
       color: $titleColor;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+       font-family: "Roboto Slab", serif;
     }
 
     & p:last-child{
@@ -73,7 +67,7 @@ export default {
     text-align: left;
   }
   i{
-    font-size: 2rem;
+    font-size: 3rem;
     color: $darkYellow;
   }
 }

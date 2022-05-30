@@ -40,4 +40,22 @@ const socialIcons = [
   }
 ]
 
-export { navItems, socialIcons }
+const toolShed = [
+  {
+    name: 'fa-desktop'
+  },
+  {
+    name: 'fa-life-ring'
+  },
+  {
+    name: 'fa-wrench'
+  },
+  {
+    name: 'fa-cart-shopping'
+  },
+  {
+    name: 'fa-mobile-screen-button'
+  }
+]
+
+export { navItems, socialIcons, toolShed }

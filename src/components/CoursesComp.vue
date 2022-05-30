@@ -1,6 +1,6 @@
 <template>
   <div :class="{'bg-color': type === 'New Courses'}"
-  class="courses pt-5 pb-2 text-center mb-5">
+  class="courses pt-5 pb-5 text-center">
     <h2 class="mt-4 mb-5 bigger">{{type}}</h2>
     <div class="container debug">
       <!-- card new course -->
@@ -42,8 +42,7 @@ export default {
 
 
   .courses{
-    background-color: #edf2f5;
-      background-color: white;
+    background-color: white;
     .btn{
       background-color: #f2b91e;
       border-color: #f2b91e;

@@ -55,4 +55,27 @@ const newCourses = [
   }
 ]
 
-export { newCourses }
+const whyCourses =[
+  {
+    title: 'Enterpreneurship',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.',
+    icon: 'fa-briefcase'
+  },
+  {
+    title: 'Accelerated learning',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.',
+    icon: 'fa-rocket'
+  },
+  {
+    title: 'Productivity',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.',
+    icon: 'fa-thumbs-up'
+  },
+  {
+    title: 'Life Coaching',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.',
+    icon: 'fa-gear'
+  },
+]
+
+export { newCourses, whyCourses }

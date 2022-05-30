@@ -15,11 +15,9 @@
     <div class="img-hover"></div>
 
     <div class="tool-shed d-flex flex-column align-items-center">
-      <i class="fa-solid fa-desktop"></i>
-      <i class="fa-solid fa-life-ring"></i>
-      <i class="fa-solid fa-wrench"></i>
-      <i class="fa-solid fa-cart-shopping"></i>
-      <i class="fa-solid fa-mobile-screen-button"></i>
+      <i v-for="(item, index) in toolShed" :key="`item-${index}`"
+      :class="`fa-solid ${item.name}`"></i>
+      
     </div>
 
   </div>
@@ -27,8 +25,17 @@
 </template>
 
 <script>
+import { toolShed } from '../assets/data/archivio';
+
 export default {
-  name: 'CattToActOffer'
+  name: 'CattToActOffer',
+  
+  
+  data(){
+    return{
+      toolShed
+    }
+  }
 }
 </script>
 
