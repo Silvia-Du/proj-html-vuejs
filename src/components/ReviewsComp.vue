@@ -1,5 +1,6 @@
 <template>
   <div class="reviews row">
+
     <div class="col-12 col-md-7">
 
       <div class="carousel d-flex justify-content-center align-items-center">
@@ -19,6 +20,18 @@
         class="fa-solid fa-arrow-right-long ms-5"></i>
   
       </div>
+      <!-- slider -->
+
+        <!-- <div class="mx-5 carousel">
+          <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
+            <div class="debug box">1</div>
+            <div class="debug box">2</div>
+            <div class="debug box">3</div>
+            <div class="debug box">4</div>
+          </VueSlickCarousel>
+        </div> -->
+      
+      <!-- / -->
   
       <div class="text-box">
         <p class="title mt-3 mb-0">{{reviews[selected].title}}</p>
@@ -34,19 +47,34 @@
       </div>
 
     </div>
+
+    
   </div>
 </template>
 
 <script>
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+// import VueSlickCarousel from 'vue-slick-carousel';
 
-import { reviews } from '../assets/data/dataMainComp'
+import { reviews } from '../assets/data/dataMainComp';
 export default {
   name: 'ReviewsComp',
+  // components: { VueSlickCarousel },
 
   data(){
     return{
       reviews,
-      selected: 1
+      selected: 1,
+      // settings: {
+      //   "dots": true,
+      //   "focusOnSelect": true,
+      //   "infinite": true,
+      //   "speed": 500,
+      //   "slidesToShow": 3,
+      //   "slidesToScroll": 1,
+      //   "touchThreshold": 5,
+      // }
     }
   },
 
@@ -76,6 +104,11 @@ export default {
 }
 
 .carousel{
+  // width: 70%;
+  // .slcik-arrow{
+  //   color: black;
+  //   background-color: ;
+  // }
   img{
     border-radius: 50%;
     margin: 0 10px;
@@ -106,5 +139,7 @@ export default {
     color: #f2b91e;
   }
 }
+
+
 
 </style>
