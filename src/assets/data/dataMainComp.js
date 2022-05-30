@@ -1,7 +1,7 @@
 //questo nn riesco a prendere le img
 const newCourses = [
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg'),
     name: 'How to be a DJ Make Electronic Music',
     subtitle: 'Electronic',
     special: true,
@@ -10,7 +10,7 @@ const newCourses = [
     courseHours: 6
   },
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/12345-1-370x200.png'),
     name: 'Nvidia UE$ Technologies Practice',
     subtitle: 'Nvidia',
     special: true,
@@ -19,7 +19,7 @@ const newCourses = [
     courseHours: 6
   },
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/photo-1491897554428-130a60dd4757-370x200.jpeg'),
     name: 'Fashon Photography from professional',
     subtitle: 'Fashon',
     special: true,
@@ -28,7 +28,7 @@ const newCourses = [
     courseHours: 6
   },
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/photo-1416339134316-0e91dc9ded92-370x200.jpeg'),
     name: 'Design Instruments for Comunication',
     subtitle: 'Comunication',
     special: false,
@@ -37,7 +37,7 @@ const newCourses = [
     courseHours: 6
   },
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/cathryn-lavery-67852-unsplash-740x400.jpg'),
     name: 'Make your concept Right and Beautiful',
     subtitle: 'Art',
     special: false,
@@ -46,7 +46,7 @@ const newCourses = [
     courseHours: 6
   },
   {
-    image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
+    image: require('../img/photo-1475452779376-caebfb988090-370x200.jpeg'),
     name: 'Road bike Manual or How to Be a Champion',
     subtitle: 'Bycicling',
     special: false,
@@ -115,7 +115,7 @@ const reviews = [
     alt: 'people-2',
     title: 'Incredible courses',
     vote: 8.5,
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum'
   },
   {
     image: require('../img/4-100x100.jpg'),

@@ -3,16 +3,15 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         
     <div v-for="(card, index) in cardsList" :key="`card-${index}`"
-    class="col position-relative">
+    class="col position-relative mb-4">
 
       <img :src="card.image" :alt="card.subtitle">
-      <!-- <img src="../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg" alt="card.subtitle"> -->
       <span v-if="card.spacial"
       class="badge text-uppercase position-absolute">special</span>
 
       <!-- text-box -->
       <div class="text-box pt-1 px-3">
-        <p class="title pt-4 mb-2">{{card.name}}</p>
+        <p class="title pt-4 mb-2 mx-5">{{card.name}}</p>
         <p class="subtitle mt-3">{{card.subtitle}}</p>
 
         <div class="data d-flex justify-content-between py-3 mt-4">
@@ -73,11 +72,11 @@ export default {
         font-size: 1.3rem;
         font-weight: bold;
         color: $titleColor;
-        line-height: 1.5rem;
+        line-height: 1.6rem;
       }
       .subtitle{
         color: $textGray;
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       .data{

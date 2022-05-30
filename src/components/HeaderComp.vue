@@ -109,7 +109,7 @@ export default {
     }
 
     img{
-      height: 35px;
+      height: 38px;
     }
     ._toggler i{
       border: 1px solid $titleColor;
