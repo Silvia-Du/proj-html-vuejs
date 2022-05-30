@@ -1,3 +1,4 @@
+//questo nn riesco a prendere le img
 const newCourses = [
   {
     image: '../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg',
@@ -101,4 +102,28 @@ const performanceData= [
   },
 ]
 
-export { newCourses, whyCourses, performanceData }
+const reviews = [
+  {
+    image: require('../img/1-100x100.jpg'),
+    alt: 'people-1',
+    title: 'Paints of the Future',
+    vote: 10,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum'
+  },
+  {
+    image: require('../img/2-100x100.jpg'),
+    alt: 'people-2',
+    title: 'Incredible courses',
+    vote: 8.5,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+  },
+  {
+    image: require('../img/4-100x100.jpg'),
+    alt: 'people-3',
+    title: 'I love this course',
+    vote: 9,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat.'
+  },
+]
+
+export { newCourses, whyCourses, performanceData, reviews }

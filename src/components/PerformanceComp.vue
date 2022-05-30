@@ -50,7 +50,6 @@ export default {
   }
 
   p{
-    // font-size: 0.9rem;
     margin-bottom: 0;
   }
 }
