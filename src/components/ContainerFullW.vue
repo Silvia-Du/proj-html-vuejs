@@ -1,7 +1,7 @@
 <template>
   <div :class="[{'bg-library': type === 'Cta'},{'bg-people': type === 'performance'}]"
   class="sd-row d-flex align-items-center">
-    <div class="container debug">
+    <div class="container">
       <CallToActOffer v-show="type === 'Cta'" />
       <PerformanceComp v-show="type === 'performance'"/>
     </div>
@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 
 .sd-row{
-  height: 55vh;
+  height: 57vh;
   background-size: cover;
   position: relative;
 }

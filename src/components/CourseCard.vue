@@ -5,7 +5,8 @@
     <div v-for="(card, index) in cardsList" :key="`card-${index}`"
     class="col position-relative">
 
-      <img :src="`../assets/img/${card.image}`" :alt="card.subtitle">
+      <img :src="card.image" :alt="card.subtitle">
+      <!-- <img src="../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg" alt="card.subtitle"> -->
       <span v-if="card.spacial"
       class="badge text-uppercase position-absolute">special</span>
 
