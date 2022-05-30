@@ -11,7 +11,7 @@
             </div>
             <div class="text-box">
               <p class="title">{{why.title}}</p>
-              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, libero similique eum accusantium quae veritatis, beatae expedita neque saepe, a quod ex odio quibusdam voluptatem provident laborum suscipit. Quidem, laudantium.</p>
+              <p class="description">{{why.text}}</p>
             </div>
           </div>
         </div>
