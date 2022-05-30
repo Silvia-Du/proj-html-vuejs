@@ -13,7 +13,8 @@
             <!-- Nav -->
             <nav class="sd-nav ">
               <ul class="mb-0">
-                <li class="mt-2" v-for="(item, index) in navItems" :key="`nav-${index}`">
+                <li @click="indexActive = index"
+                class="mt-2" v-for="(item, index) in navItems" :key="`nav-${index}`">
                   <a :href="item.link">{{item.name}}</a>
 
                   <div :class="{'active': index === indexActive}"
