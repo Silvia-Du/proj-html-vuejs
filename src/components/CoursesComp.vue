@@ -2,7 +2,7 @@
   <div :class="{'bg-color': type === 'New Courses'}"
   class="courses pt-5 pb-5 text-center">
     <h2 class="mt-4 mb-5 bigger">{{type}}</h2>
-    <div class="container debug">
+    <div class="container">
       <!-- card new course -->
      <CourseCard v-show="type === 'New Courses'" :cardsList="newCourses"/>
      <InfoCourseCard v-show="type === 'Why my Courses?'"/>
@@ -31,8 +31,6 @@ export default {
         newCourses
       }
     }
-
-
 }
 </script>
 
