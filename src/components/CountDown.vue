@@ -3,15 +3,64 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-12 col-md-6 subscribe">
+        <div class="col-12 col-lg-6 subscribe text-center text-lg-start">
           <div>
             <span class="me-1 white">Limited Sale:</span>
             <span>All courses with 55% off</span>
           </div>
           <!-- input -->
           <div class="input-group mt-4 mb-2 position-relative">
-            <input type="text" class="input-group rounded-pill" placeholder="Enter your E-mail">
-            <button type="button" class="btn btn-primary rounded-pill text-uppercase position-absolute">Subscribe</button>
+            <input v-model="newEmail"
+            type="text" class="input-group rounded-pill" placeholder="Enter your E-mail">
+            <button @click="newSuscriber()"
+            type="button" class="btn btn-primary rounded-pill text-uppercase position-absolute">Subscribe</button>
+          </div>
+        </div>
+        <!-- subscription -->
+        <div v-show="getnewData"
+        :class="{'center': checksubscription}"
+        class="subscription position-fixed py-3">
+
+          <!-- input area for subscription -->
+          <div v-show="checksubscription === false">
+          
+            <div class="mb-3">
+              <!-- email -->
+              <label class="form-label">Email address</label>
+              <input v-model="newObject.emailAdress"
+              type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <!-- name/surname -->
+            <div class="mb-3">
+              <label class="form-label">Your name</label>
+              <input v-model="newObject.name"
+              type="text" class="form-control" placeholder="name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your surname</label>
+              <input v-model="newObject.surname"
+              type="text" class="form-control" placeholder="surname">
+            </div>
+            <!-- agreement -->
+            <div class="form-check">
+              <input @click="newObject.agreement = !newObject.agreement"
+              class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#">Agree terms and condition</a>
+              </label>
+            </div>
+            <div class="d-flex justify-content-center my-3">
+              <button @click="getSubscription()"
+              type="button" class="btn btn-warning rounded-pill text-uppercase">Get Discount</button>
+            </div>
+          </div>
+          <!-- feedback Subscription -->
+          <div v-show="checksubscription" class="text-center">
+            <p>Iscrizione avvenuta con successo!</p>
+            <div class="d-flex justify-content-center my-3">
+              <button @click="getnewData = false"
+              type="button" class="btn btn-warning rounded-pill text-uppercase">Ok!</button>
+            </div>
           </div>
         </div>
 
@@ -41,8 +90,43 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'CountDown'
+  name: 'CountDown',
+
+  data(){
+    return{
+      newEmail: '',
+      getnewData: false,
+      checksubscription: false,
+      myEndPoint: 'http://localhost:3000/registeredEmail',
+
+      newObject:{
+        emailAdress: '',
+        name: '',
+        surneame: '',
+        agreement: true
+      }
+    }
+  },
+
+  methods:{
+    newSuscriber(){
+      this.getnewData = true;
+    },
+
+    getSubscription(){
+
+      axios.post(this.myEndPoint, this.newObject)
+      .then(response =>{
+        console.log(response);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
+      this.checksubscription= true;
+    }
+  }
 }
 </script>
 
@@ -59,7 +143,6 @@ export default {
     background-color: $darkYellow;
     //subscribe
     .subscribe, .count-down{
-      // width: 50%;
       span{
         font-size: 2.25rem;
         font-family: "Roboto Slab", serif;
@@ -84,6 +167,25 @@ export default {
       
     }
 
+    //subscription
+
+    .subscription{
+      min-height: 300px;
+      width: 400px;
+      background-color: white;
+      box-shadow: 0 0 10px gray;
+      border-radius: 15px;
+      bottom: -7%;
+      left: 50%;
+      transform: translate( -50% );
+      z-index: 999;
+      .btn{
+        width: 50%;
+        color: white;
+        font-family: "Roboto Slab", serif;
+      }
+    }
+
     //count-down
     .count-down{
       font-family: "Roboto Slab", serif;
@@ -101,5 +203,27 @@ export default {
   .white{
     color: white;
   }
+
+  //class for feedback
+  .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px ){
+    .call-to-act .subscribe span,
+    .call-to-act .count-down h2{
+      font-size: 1.5rem;
+    }
+  }
+  @media screen and (max-width: 992px ){
+    .call-to-act .subscribe span,
+    .call-to-act .count-down h2{
+      font-size: 2rem;
+    }
+  }
+
+  
 
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div>
     <!-- JUMBOTRON -->
-    <div class="jumbotron d-flex align-items-center">
+    <div class="jumbotron d-flex align-items-center container-fluid">
 
-      <div class="container">
-        <div class="row d-flex justify-content-end">
-          <div class="col-12 col-md-5 text-box">
+      <!-- <div class="container-fluid"> -->
+        <div class="row d-flex justify-content-lg-end debug">
+          <div class="col-12 col-lg-5 text-box debug  px-md-5 text-center text-md-start">
             <h1 class="mb-4">Start Your Human <span style="color: #f2b91e">Revoultion</span>  today</h1>
             <p>A wonderful revolution has taken possession of my entire soul, like these sweet mornings of spring which i enjoy my whole heart.</p>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
 
       <CountDown />
 
@@ -51,6 +51,8 @@ export default {
   background-size: cover;
   background-position: center;
   position: relative;
+  .row{
+    margin: 0 auto;
   h1{
     font-size: 3.75rem;
   }
@@ -59,6 +61,18 @@ export default {
     margin-right: 180px;
     margin-bottom: 200px;
   }
+  }
 }
+
+ @media screen and (max-width: 992px ){
+    
+  .col-12{
+    margin-right: 0;
+    margin-bottom: 200px;
+    h1{
+      font-size: 2.5rem;
+    }
+  }
+  }
 
 </style>

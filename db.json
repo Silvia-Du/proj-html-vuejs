@@ -1,0 +1,18 @@
+{
+  "registeredEmail": [
+    {
+      "id": 1,
+      "emailAdress": "pincopallino@gmail.com",
+      "name": "giorgio",
+      "surneame": "dibongo",
+      "agreement": true
+    },
+    {
+      "id": 2,
+      "emailAdress": "pincopallina@gmail.com",
+      "name": "giorgia",
+      "surneame": "dibonga",
+      "agreement": true
+    }
+  ]
+}
