@@ -14,5 +14,20 @@
       "surneame": "dibonga",
       "agreement": true
     }
+  ],
+
+  "newCourses" : [
+    {
+      "image": "../assets/img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg",
+     "name": "How to be a DJ Make Electronic Music",
+      "subtitle": "Electronic",
+      "special": true,
+      "price": 59.99,
+      "discount": 10,
+      "level": "Advanced",
+      "lectures": 8,
+      "courseHours": 6
+    }
+    
   ]
 }
