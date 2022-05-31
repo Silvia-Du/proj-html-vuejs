@@ -1,23 +1,34 @@
 const navItems = [
   {
     name: 'Courses',
-    link: '#'
+    link: '#',
+    dropdown: null
   },
   {
     name: 'Course Format',
-    link: '#'
+    link: '#',
+    dropdown:[
+      'Default Style', 'Classic Style', 'Udemy Affiliate Style', 'Offline Style'
+    ]
   },
   {
     name: 'Add Course',
-    link: '#'
+    link: '#',
+    dropdown: null
   },
   {
     name: 'Pages',
-    link: '#'
+    link: '#',
+    dropdown:[
+      'About Us', 'Shop', 'Contact Us'
+    ]
   },
   {
     name: 'Demos',
-    link: '#'
+    link: '#',
+    dropdown:[
+      'Udemy Affiliate', 'Light LMS', 'Dark LMS'
+    ]
   },
 ]
 

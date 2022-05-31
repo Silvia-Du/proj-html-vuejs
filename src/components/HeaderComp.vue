@@ -18,7 +18,7 @@
                 class="mt-2 position-relative" v-for="(item, index) in navItems" :key="`nav-${index}`">
                   <a :href="item.link">{{item.name}}</a>
                   <!-- dropdown -->
-                  <div v-show="index === hoverIndex" class="dropdown position-absolute debug"></div>
+                  <div v-show="checkDropD(item,index)" class="dropdown position-absolute debug"></div>
                   <!-- line object for active -->
                   <div :class="{'active': index === indexActive}"
                   class="line-active mt-2 position-relative">
@@ -64,9 +64,20 @@ export default {
   data(){
     return{
       indexActive: 4,
-      hoverIndex: -1
+      hoverIndex: -1,
     }
-  }
+  },
+
+  methods: {
+    checkDropD(item,index){
+
+      if(index === this.hoverIndex && item.dropdown != null){
+        return true
+      }else{
+        return false
+      }
+    }
+  },
 }
 
 </script>
