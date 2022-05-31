@@ -49,7 +49,7 @@ export default {
       text-transform: uppercase;
       font-weight: bold;
       padding: 10px 20px;
-      transition: all 2s;
+      transition: all 0.3s;
       overflow: hidden;
       &:hover .overlay{
         width: 124px;

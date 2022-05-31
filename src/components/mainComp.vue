@@ -61,8 +61,17 @@ export default {
   .col-12{
     margin-right: 128px;
     margin-bottom: 200px;
+    animation-name: move-title;
+    animation-duration: 3s;
   }
   }
+}
+
+
+
+@keyframes move-title {
+  0%   {opacity: 0%; margin-right: 600px;}
+  100% {opacity: 100%; margin-right: 128px;}
 }
 
  @media screen and (max-width: 992px ){

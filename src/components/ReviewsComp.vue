@@ -24,7 +24,7 @@
       <div class="text-box">
         <p class="title mt-3 mb-0">{{reviews[selected].title}}</p>
         <!-- STAR -->
-        <div class="star-box mb-4 debug position-relative">
+        <div class="star-box mb-4 position-relative">
 
           <i v-for="i in Math.floor(fullStar(reviews[selected]))" :key="i"
           class="fa-star fa-solid"></i>
