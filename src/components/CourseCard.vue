@@ -6,7 +6,7 @@
     v-for="(card, index) in cardsList" :key="`card-${index}`"
     class="col position-relative mb-4">
       <div class="img-box position-relative">
-        <img :src="getImage(card.image)" :alt="card.subtitle">
+        <img :src="card.image" :alt="card.subtitle">
         <div class="overlay position-absolute justify-content-center align-items-center">
           <p :class="{'delate': card.discount != 0}" class="mb-0 me-1">${{card.price}}</p>
           <p class="mb-0 yellow" v-if="card.discount != 0">${{getDiscount(card)}}</p>
@@ -46,6 +46,7 @@
 <script>
 export default {
   name: 'CourseCard',
+
   props: {
     cardsList: Array 
   },
@@ -53,15 +54,9 @@ export default {
   methods:{
     getDiscount(card){
       let cardDiscount = card.price - (card.price * (card.discount/100)) ;
-      console.log(cardDiscount.toFixed(2));
-
       return cardDiscount.toFixed(2);
     },
 
-    getImage(cardImage){
-      cardImage = require(cardImage);
-      return cardImage;
-    }
   }
 }
 </script>

@@ -1,4 +1,4 @@
-//questo nn riesco a prendere le img
+
 const newCourses = [
   {
     image: require('../img/photo-1496307042754-b4aa456c4a2d-370x200.jpeg'),
@@ -119,7 +119,7 @@ const reviews = [
     image: require('../img/1-100x100.jpg'),
     alt: 'people-1',
     title: 'Paints of the Future',
-    vote: 10,
+    vote: 8,
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum'
   },
   {
@@ -133,7 +133,7 @@ const reviews = [
     image: require('../img/4-100x100.jpg'),
     alt: 'people-3',
     title: 'I love this course',
-    vote: 9,
+    vote: 7.5,
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat, repellendus nisi, suscipit laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, officiis tempora rem inventore atque itaque mollitia omnis fuga in voluptatem possimus minus ad praesentium repellat.'
   },
 ]

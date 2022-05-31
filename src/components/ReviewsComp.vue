@@ -20,28 +20,19 @@
         class="fa-solid fa-arrow-right-long ms-5"></i>
   
       </div>
-      <!-- slider -->
-
-        <!-- <div class="mx-5 carousel">
-          <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
-            <div class="debug box">1</div>
-            <div class="debug box">2</div>
-            <div class="debug box">3</div>
-            <div class="debug box">4</div>
-          </VueSlickCarousel>
-        </div> -->
-      
-      <!-- / -->
   
       <div class="text-box">
         <p class="title mt-3 mb-0">{{reviews[selected].title}}</p>
-  
-        <div class="star-box mb-4">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star-half"></i>
+        <!-- STAR -->
+        <div class="star-box mb-4 debug position-relative">
+
+          <i v-for="i in Math.floor(fullStar(reviews[selected]))" :key="i"
+          class="fa-star fa-solid"></i>
+
+          <i v-if="halfStar(reviews[selected]) % 2" class="fa-solid fa-star-half"></i>
+
+          <i v-for="i in getEmptyStar(reviews[selected])" :key="`half${i}`"
+          class="fa-star fa-regular"></i>
         </div>
         <p class="mb-5">{{reviews[selected].text}}</p>
       </div>
@@ -53,32 +44,39 @@
 </template>
 
 <script>
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
-// import VueSlickCarousel from 'vue-slick-carousel';
 
 import { reviews } from '../assets/data/dataMainComp';
 export default {
   name: 'ReviewsComp',
-  // components: { VueSlickCarousel },
 
   data(){
     return{
       reviews,
-      selected: 1,
-      // settings: {
-      //   "dots": true,
-      //   "focusOnSelect": true,
-      //   "infinite": true,
-      //   "speed": 500,
-      //   "slidesToShow": 3,
-      //   "slidesToScroll": 1,
-      //   "touchThreshold": 5,
-      // }
+      selected: 2,
+      stringArray:[]
     }
   },
 
+  computed:{
+   
+  },
+
   methods:{
+
+     fullStar(object){
+      return Math.round(object.vote/2)
+    },
+     halfStar(object){
+      return Math.round(object.vote)
+    },
+
+    getEmptyStar(object){
+
+      return (5- Math.floor(Math.round(object.vote /2)) - (Math.round(object.vote) % 2));
+      
+    },
+
+
     increase(){
       this.selected += 1;
       if(this.selected === reviews.length){
@@ -91,7 +89,7 @@ export default {
       if(this.selected === -1){
         this.selected = reviews.length -1;
       }
-    }
+    },
   }
 }
 </script>
@@ -103,12 +101,8 @@ export default {
   margin: 0 auto;
 }
 
+
 .carousel{
-  // width: 70%;
-  // .slcik-arrow{
-  //   color: black;
-  //   background-color: ;
-  // }
   img{
     border-radius: 50%;
     margin: 0 10px;
@@ -134,10 +128,10 @@ export default {
   p{
     color: #4d5156;
   }
-
   i{
-    color: #f2b91e;
+    color: $darkYellow;
   }
+
 }
 
 

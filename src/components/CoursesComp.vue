@@ -19,8 +19,7 @@
 import CourseCard from './CourseCard.vue';
 import InfoCourseCard from './InfoCourseCard.vue';
 import ReviewsComp from './ReviewsComp.vue';
-import axios from 'axios';
-// import { newCourses } from '../assets/data/dataMainComp';
+import { newCourses } from '../assets/data/dataMainComp';
 
 export default {
     name: "CoursesComp",
@@ -31,15 +30,8 @@ export default {
 
     data(){
       return{
-        newCourses: []
+        newCourses
       }
-    },
-    mounted(){
-      axios.get('http://localhost:3000/newCourses')
-      .then(response =>{
-        console.log(response.data);
-        this.newCourses = response.data;
-      })
     }
 }
 </script>
