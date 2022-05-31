@@ -2,10 +2,16 @@
   
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         
-    <div v-for="(card, index) in cardsList" :key="`card-${index}`"
+    <div
+    v-for="(card, index) in cardsList" :key="`card-${index}`"
     class="col position-relative mb-4">
-
-      <img :src="card.image" :alt="card.subtitle">
+      <div class="img-box position-relative">
+        <img :src="card.image" :alt="card.subtitle">
+        <div class="overlay position-absolute justify-content-center align-items-center">
+          <p :class="{'delate': card.discount != 0}" class="mb-0 me-1">${{card.price}}</p>
+          <p class="mb-0 yellow" v-if="card.discount != 0">${{getDiscount(card)}}</p>
+        </div>
+      </div>
       <span v-if="card.spacial"
       class="badge text-uppercase position-absolute">special</span>
 
@@ -42,6 +48,15 @@ export default {
   name: 'CourseCard',
   props: {
     cardsList: Array 
+  },
+
+  methods:{
+    getDiscount(card){
+      let cardDiscount = card.price - (card.price * (card.discount/100)) ;
+      console.log(cardDiscount.toFixed(2));
+
+      return cardDiscount.toFixed(2);
+    }
   }
 }
 </script>
@@ -49,7 +64,11 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/vars.scss';
 
-  
+  .col{
+    &:hover .overlay{
+      display: flex;
+    }
+  }
   img{
     width: 100%;
   }
@@ -68,7 +87,7 @@ export default {
  .text-box{
    background-color: white;
       .title{
-        font-family: "Barlow", sans-serif;
+        font-family: "Roboto Slab", serif;
         font-size: 1.3rem;
         font-weight: bold;
         color: $titleColor;
@@ -88,6 +107,30 @@ export default {
           color: $mainYellow;
           font-size: 0.85rem;
           margin-right: 5px;
+        }
+      }
+    }
+
+    //overlay
+    .overlay{
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.514);
+      display: none;
+      p{
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: white;
+        font-family: "Roboto Slab", serif;
+        &.yellow{
+          color: $darkYellow;
+        }
+        &.delate{
+          text-decoration: line-through;
+          transform: scale(0.8);
+          color: rgb(189, 184, 184);
         }
       }
     }

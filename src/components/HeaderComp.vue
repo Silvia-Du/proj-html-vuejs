@@ -76,6 +76,7 @@ export default {
   height: 100px;
   background-color: white;
   color: $titleColor;
+ 
   .row{
     width: 100%;
 
@@ -104,7 +105,9 @@ export default {
           margin: 10px;
           font-size: 1.1rem;
           color: $titleColor;
-  
+          &:hover{
+            color: $darkYellow;
+          }
         }
       }
     }
@@ -157,6 +160,9 @@ ul{
       font-weight: bold;
       font-size: 1.1rem;
       text-decoration: none;
+      &:hover{
+        color: $darkYellow;
+      }
     }
     
   }

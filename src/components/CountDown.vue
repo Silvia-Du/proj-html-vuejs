@@ -10,7 +10,7 @@
           </div>
           <!-- input -->
           <div class="input-group mt-4 mb-2 position-relative">
-            <input v-model="newEmail"
+            <input v-model="newObject.emailAdress"
             type="text" class="input-group rounded-pill" placeholder="Enter your E-mail">
             <button @click="newSuscriber()"
             type="button" class="btn btn-primary rounded-pill text-uppercase position-absolute">Subscribe</button>
@@ -24,12 +24,6 @@
           <!-- input area for subscription -->
           <div v-show="checksubscription === false">
           
-            <div class="mb-3">
-              <!-- email -->
-              <label class="form-label">Email address</label>
-              <input v-model="newObject.emailAdress"
-              type="email" class="form-control" placeholder="name@example.com">
-            </div>
             <!-- name/surname -->
             <div class="mb-3">
               <label class="form-label">Your name</label>
@@ -82,21 +76,25 @@
             <h2>34</h2>
             <p>Seconds</p>
           </div>
-
+          
         </div>
+
+      
+        
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+
 export default {
   name: 'CountDown',
 
+
   data(){
     return{
-      newEmail: '',
       getnewData: false,
       checksubscription: false,
       myEndPoint: 'http://localhost:3000/registeredEmail',

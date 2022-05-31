@@ -4,8 +4,8 @@
     <div class="jumbotron d-flex align-items-center container-fluid">
 
       <!-- <div class="container-fluid"> -->
-        <div class="row d-flex justify-content-lg-end debug">
-          <div class="col-12 col-lg-5 text-box debug  px-md-5 text-center text-md-start">
+        <div class="row d-flex justify-content-lg-end">
+          <div class="col-12 col-lg-6 text-boxs  px-md-5 text-center text-md-start">
             <h1 class="mb-4">Start Your Human <span style="color: #f2b91e">Revoultion</span>  today</h1>
             <p>A wonderful revolution has taken possession of my entire soul, like these sweet mornings of spring which i enjoy my whole heart.</p>
           </div>
@@ -37,6 +37,7 @@ import AboutComp from './AboutComp.vue';
 import CoursesComp from './CoursesComp.vue';
 import ContainerFullW from './ContainerFullW.vue';
 import CountDown from './CountDown.vue';
+
 export default {
     name: "MainComp",
     components: { AboutComp, CoursesComp, ContainerFullW, CountDown }
@@ -58,7 +59,7 @@ export default {
   }
  
   .col-12{
-    margin-right: 180px;
+    margin-right: 128px;
     margin-bottom: 200px;
   }
   }

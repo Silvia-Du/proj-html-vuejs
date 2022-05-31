@@ -5,6 +5,8 @@ const newCourses = [
     name: 'How to be a DJ Make Electronic Music',
     subtitle: 'Electronic',
     special: true,
+    price: 59.99,
+    discount: 10,
     level: 'Advanced',
     lectures: 8,
     courseHours: 6
@@ -14,6 +16,8 @@ const newCourses = [
     name: 'Nvidia UE$ Technologies Practice',
     subtitle: 'Nvidia',
     special: true,
+    price: 50.99,
+    discount: 50,
     level: 'Advanced',
     lectures: 8,
     courseHours: 6
@@ -23,6 +27,8 @@ const newCourses = [
     name: 'Fashon Photography from professional',
     subtitle: 'Fashon',
     special: true,
+    price:  90.99,
+    discount: 0,
     level: 'Advanced',
     lectures: 6,
     courseHours: 6
@@ -32,6 +38,8 @@ const newCourses = [
     name: 'Design Instruments for Comunication',
     subtitle: 'Comunication',
     special: false,
+    price: 70.99,
+    discount: 15,
     level: 'Intermediate',
     lectures: 6,
     courseHours: 6
@@ -41,6 +49,8 @@ const newCourses = [
     name: 'Make your concept Right and Beautiful',
     subtitle: 'Art',
     special: false,
+    price: 20.99,
+    discount: 0,
     level: 'Intermediate',
     lectures: 6,
     courseHours: 6
@@ -50,6 +60,8 @@ const newCourses = [
     name: 'Road bike Manual or How to Be a Champion',
     subtitle: 'Bycicling',
     special: false,
+    price: 60.99,
+    discount: 30,
     level: 'Beginner',
     lectures: 6,
     courseHours: 6
