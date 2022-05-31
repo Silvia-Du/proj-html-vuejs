@@ -15,10 +15,14 @@
               <ul class="mb-0">
 
                 <li @click="indexActive = index" @mouseover="hoverIndex = index" @mouseleave="hoverIndex = -1"
-                class="mt-2 position-relative" v-for="(item, index) in navItems" :key="`nav-${index}`">
+                class="mt-2 position-relative pb-2" v-for="(item, index) in navItems" :key="`nav-${index}`">
                   <a :href="item.link">{{item.name}}</a>
                   <!-- dropdown -->
-                  <div v-show="checkDropD(item,index)" class="dropdown position-absolute debug"></div>
+                  <div v-show="checkDropD(item,index)" class="dropdown position-absolute" @mouseover="hoverIndex = index">
+                    <!-- <ul> -->
+                      <p v-for="(el, index) in item.dropdown" :key="`dd-${index}`"><a :href="el.link">{{el.name}}</a></p>
+                    <!-- </ul> -->
+                  </div>
                   <!-- line object for active -->
                   <div :class="{'active': index === indexActive}"
                   class="line-active mt-2 position-relative">
@@ -180,8 +184,9 @@ ul{
     }
 
     .dropdown{
+      cursor: pointer;
       width: 220px;
-      height: 100px;
+      padding: 10px 10px 10px 30px;
       top: 35px;
       left: 50%;
       transform: translate(-50%);
@@ -189,6 +194,10 @@ ul{
       background-color: white;
       border-top: 3px solid $darkYellow;
       box-shadow: 2px 2px 3px rgb(182, 178, 178);
+      a{
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
     }
     
   }

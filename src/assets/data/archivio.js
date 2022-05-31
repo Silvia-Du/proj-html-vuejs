@@ -8,7 +8,22 @@ const navItems = [
     name: 'Course Format',
     link: '#',
     dropdown:[
-      'Default Style', 'Classic Style', 'Udemy Affiliate Style', 'Offline Style'
+      {
+        name: 'Default Style',
+        link: '#'
+      },
+      {
+        name: 'Classic Style',
+        link: '#'
+      },
+      {
+        name: 'Udemy Affiliate Style',
+        link: '#'
+      },
+      {
+        name: 'Offline Style',
+        link: '#'
+      }
     ]
   },
   {
@@ -20,14 +35,36 @@ const navItems = [
     name: 'Pages',
     link: '#',
     dropdown:[
-      'About Us', 'Shop', 'Contact Us'
+      {
+        name: 'About Us',
+        link: '#'
+      },
+      {
+        name: 'Shop',
+        link: '#'
+      },
+      {
+        name: 'Contact Us',
+        link: '#'
+      }
     ]
   },
   {
     name: 'Demos',
     link: '#',
     dropdown:[
-      'Udemy Affiliate', 'Light LMS', 'Dark LMS'
+      {
+        name: 'Udemy Affiliate',
+        link: '#'
+      },
+      {
+        name: 'Light LMS',
+        link: '#'
+      },
+      {
+        name: 'Dark LMS',
+        link: '#'
+      }
     ]
   },
 ]
