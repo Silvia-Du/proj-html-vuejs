@@ -8,7 +8,10 @@
      <InfoCourseCard v-show="type === 'Why my Courses?'"/>
       <ReviewsComp v-show="type === 'What Students Say'"/>
     </div>
-    <button v-show="type === 'New Courses'" type="button" class="btn btn-primary rounded-pill my-5">Load More</button>
+    <button v-show="type === 'New Courses'" type="button" class="btn btn-primary rounded-pill my-5 position-relative">
+    <div class="overlay position-absolute"></div>
+    Load More
+    </button>
   </div>
 </template>
 
@@ -47,11 +50,26 @@ export default {
       text-transform: uppercase;
       font-weight: bold;
       padding: 10px 20px;
+      transition: all 2s;
+      overflow: hidden;
+      &:hover .overlay{
+        width: 124px;
+      }
+      .overlay{
+        width: 0px;
+        height: 46px;
+        transition: all 2s;
+        background-color: rgba(0, 0, 0, 0.164);
+        top: 0;
+        left: 0;
+      }
     } 
   }
 
   .bg-color{
     background-color: #edf2f5;
   }
+
+  
 
 </style>
