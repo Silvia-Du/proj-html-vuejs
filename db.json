@@ -13,6 +13,13 @@
       "name": "giorgia",
       "surneame": "dibonga",
       "agreement": true
+    },
+    {
+      "emailAdress": "",
+      "name": "",
+      "surneame": "",
+      "agreement": true,
+      "id": 3
     }
   ]
 }

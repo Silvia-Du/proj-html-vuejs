@@ -11,7 +11,8 @@
           <!-- input -->
           <div class="input-group mt-4 mb-2 position-relative">
             <input v-model="newObject.emailAdress"
-            type="text" class="input-group rounded-pill" placeholder="Enter your E-mail" required>
+            
+            type="text" class="input-group rounded-pill" placeholder="Enter your E-mail" id="exampleInputEmail1" aria-describedby="emailHelp">
             <button @click="newSuscriber()"
             type="button" class="btn btn-primary rounded-pill text-uppercase position-absolute">Subscribe</button>
           </div>
@@ -25,28 +26,33 @@
           <div v-show="checksubscription === false">
           
             <!-- name/surname -->
-            <div class="mb-3">
-              <label class="form-label">Your name</label>
-              <input v-model="newObject.name"
-              type="text" class="form-control" placeholder="name" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Your surname</label>
-              <input v-model="newObject.surname"
-              type="text" class="form-control" placeholder="surname" required>
-            </div>
-            <!-- agreement -->
-            <div class="form-check">
-              <input @click="newObject.agreement = !newObject.agreement"
-              class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-              <label class="form-check-label" for="flexCheckDefault">
-                <a href="#">Agree terms and condition</a>
-              </label>
-            </div>
-            <div class="d-flex justify-content-center my-3">
-              <button @click="getSubscription()"
-              type="button" class="btn btn-warning rounded-pill text-uppercase">Get Discount</button>
-            </div>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Your name</label>
+                <input v-model="newObject.name"
+                type="text" class="form-control" placeholder="name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Your surname</label>
+                <input v-model="newObject.surname"
+                type="text" class="form-control" placeholder="surname" required>
+              </div>
+              
+              <!-- agreement -->
+              <div class="form-check">
+                <input @click="newObject.agreement = !newObject.agreement"
+                class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                <label class="form-check-label" for="flexCheckDefault">
+                  <a href="#">Agree terms and condition</a>
+                </label>
+              </div>
+              <div class="d-flex justify-content-center my-3">
+                <button @click="getSubscription()"
+                type="button" class="btn btn-warning rounded-pill text-uppercase">Get Discount</button>
+              </div>
+              
+            </form>
+
           </div>
           <!-- feedback Subscription -->
           <div v-show="checksubscription" class="text-center">
