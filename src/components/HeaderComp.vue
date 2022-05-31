@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="col-4 d-flex align-items-center">
-          <img src="../assets/img/MasterStudy-1.svg" alt="logo-svg">
+          <img @click="$emit('clickedLink', 'Main')" src="../assets/img/MasterStudy-1.svg" alt="logo-svg">
 
           </div>
         <div class="col-8 d-none d-xl-block d-flex">
@@ -14,15 +14,17 @@
             <nav class="sd-nav ">
               <ul class="mb-0">
 
-                <li @click="indexActive = index" @mouseover="hoverIndex = index" @mouseleave="hoverIndex = -1"
+                <li @click="clickedLink(item,index)" @mouseover="hoverIndex = index" @mouseleave="hoverIndex = -1"
                 class="mt-2 position-relative pb-2" v-for="(item, index) in navItems" :key="`nav-${index}`">
                   <a :href="item.link">{{item.name}}</a>
+
                   <!-- dropdown -->
                   <div v-show="checkDropD(item,index)" class="dropdown position-absolute" @mouseover="hoverIndex = index">
-                    <!-- <ul> -->
+                    
                       <p v-for="(el, index) in item.dropdown" :key="`dd-${index}`"><a :href="el.link">{{el.name}}</a></p>
-                    <!-- </ul> -->
+                   
                   </div>
+
                   <!-- line object for active -->
                   <div :class="{'active': index === indexActive}"
                   class="line-active mt-2 position-relative">
@@ -80,6 +82,12 @@ export default {
       }else{
         return false
       }
+    },
+
+    clickedLink(item,index){
+      this.indexActive = index;
+      console.log(item.name);
+      this.$emit('clickedLink', item.name);
     }
   },
 }

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
 
-    <HeaderComp :navItems="navItems" :socialItems="socialIcons"/>
-    <MainComp />
+    <HeaderComp :navItems="navItems" :socialItems="socialIcons" @clickedLink ="getClicked"/>
+    <MainComp v-show="defaultComp === 'Main'"/>
+    <MainAddCourse />
     <FooterComp />
    
   </div>
@@ -16,21 +17,30 @@ import MainComp from './components/MainComp.vue';
 import FooterComp from './components/FooterComp.vue';
 //import data
 import { socialIcons, navItems } from './assets/data/archivio';
+import MainAddCourse from './components/MenuComp/MainAddCourse.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderComp,
     FooterComp,
-    MainComp
+    MainComp,
+    MainAddCourse
 },
 
 data(){
   return{
     socialIcons,
-    navItems
+    navItems,
+    defaultComp: 'Main'
   }
-}
+},
+
+methods: {
+  getClicked(string){
+    this.defaultComp = string
+  }
+},
 }
 </script>
 
