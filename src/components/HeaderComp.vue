@@ -13,22 +13,24 @@
             <!-- Nav -->
             <nav class="sd-nav ">
               <ul class="mb-0">
-                <li @click="indexActive = index"
-                class="mt-2" v-for="(item, index) in navItems" :key="`nav-${index}`">
-                  <a :href="item.link">{{item.name}}</a>
 
+                <li @click="indexActive = index" @mouseover="hoverIndex = index" @mouseleave="hoverIndex = -1"
+                class="mt-2 position-relative" v-for="(item, index) in navItems" :key="`nav-${index}`">
+                  <a :href="item.link">{{item.name}}</a>
+                  <!-- dropdown -->
+                  <div v-show="index === hoverIndex" class="dropdown position-absolute debug"></div>
+                  <!-- line object for active -->
                   <div :class="{'active': index === indexActive}"
                   class="line-active mt-2 position-relative">
                     <i class="fa-solid fa-caret-up position-absolute"></i>
                   </div>
-
                 </li>
+
               </ul>
               <!-- badge -->
               <span class="badge text-uppercase">New</span>
             </nav>
-    
-            <!-- SOCIAL -->
+            <!-- social icons -->
             <div class="social ms-5">
               <a v-for="(icon, index) in socialItems" :key="`icons-${index}`"
               :href="icon.link"><i :class="`fa-brands ${icon.ref}`"></i></a>
@@ -62,6 +64,7 @@ export default {
   data(){
     return{
       indexActive: 4,
+      hoverIndex: -1
     }
   }
 }
@@ -163,6 +166,18 @@ ul{
       &:hover{
         color: $darkYellow;
       }
+    }
+
+    .dropdown{
+      width: 220px;
+      height: 100px;
+      top: 35px;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: 800;
+      background-color: white;
+      border-top: 3px solid $darkYellow;
+      box-shadow: 2px 2px 3px rgb(182, 178, 178);
     }
     
   }
