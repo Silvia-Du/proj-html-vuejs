@@ -46,6 +46,7 @@
 <script>
 
 import { reviews } from '../assets/data/dataMainComp';
+
 export default {
   name: 'ReviewsComp',
 

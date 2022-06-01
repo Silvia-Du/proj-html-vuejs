@@ -3,7 +3,7 @@
 
     <HeaderComp :navItems="navItems" :socialItems="socialIcons" @clickedLink ="getClicked"/>
     <MainComp v-show="defaultComp === 'Main'"/>
-    <MainAddCourse />
+    <MainAddCourse v-show ="defaultComp === 'Add Course'"/>
     <FooterComp />
    
   </div>

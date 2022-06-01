@@ -20,6 +20,14 @@
       "surneame": "",
       "agreement": true,
       "id": 3
+    },
+    {
+      "emailAdress": "silvia@",
+      "name": "silvia",
+      "surneame": "",
+      "agreement": false,
+      "surname": "du",
+      "id": 4
     }
   ]
 }

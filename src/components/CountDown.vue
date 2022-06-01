@@ -3,12 +3,13 @@
     <div class="container-fluid">
       <div class="row">
 
+        <!-- LEFT -->
         <div class="col-12 col-lg-6 subscribe text-center text-lg-start">
           <div>
             <span class="me-1 white">Limited Sale:</span>
             <span>All courses with 55% off</span>
           </div>
-          <!-- input -->
+          <!-- email -->
           <div class="input-group mt-4 mb-2 position-relative">
             <input v-model="newObject.emailAdress"
             
@@ -64,7 +65,7 @@
           </div>
         </div>
 
-        <!-- count-down -->
+        <!-- RIGHT count-down -->
         <div class="col-12 col-lg-6 count-down d-flex justify-content-center align-items-center">
           <div class="ms-5">
             <h2>26</h2>
